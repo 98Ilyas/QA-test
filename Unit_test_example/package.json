@@ -1,0 +1,29 @@
+{
+  "name": "unit-test",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "unit test example",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "coverage": "c8 npm test",
+    "lint": "eslint ./ --fix",
+    "prepare": "husky install"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.5.0",
+    "eslint": "^9.5.0",
+    "eslint-config-google": "^0.14.0",
+    "husky": "^9.0.11",
+    "globals": "^15.6.0"
+  },
+  "dependencies": {
+    "c8": "^10.1.2",
+    "chai": "^5.1.1",
+    "husky": "^9.0.11",
+    "mocha": "^10.5.2",
+    "mochawesome": "^7.1.3"
+  }
+}

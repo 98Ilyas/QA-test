@@ -1,0 +1,369 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 9,
+    "passes": 9,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-06-28T12:53:58.731Z",
+    "end": "2024-06-28T12:53:58.746Z",
+    "duration": 15,
+    "testsRegistered": 9,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "322c403f-67a3-40ac-86e3-584752d94c5c",
+      "title": "",
+      "fullFile": "C:\\Users\\User\\git\\QA-test\\Unit_test_task\\test\\isNumberEven.spec.js",
+      "file": "\\test\\isNumberEven.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6a3c32ab-c5c8-4029-9363-8ed37e4dcfac",
+          "title": "NumbersValidator",
+          "fullFile": "C:\\Users\\User\\git\\QA-test\\Unit_test_task\\test\\isNumberEven.spec.js",
+          "file": "\\test\\isNumberEven.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"NumbersValidator\"",
+              "fullTitle": "NumbersValidator \"before each\" hook in \"NumbersValidator\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "validator = new NumbersValidator();",
+              "err": {},
+              "uuid": "41a39281-594c-402c-bbd9-9595765208c8",
+              "parentUUID": "6a3c32ab-c5c8-4029-9363-8ed37e4dcfac",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook in \"NumbersValidator\"",
+              "fullTitle": "NumbersValidator \"after each\" hook in \"NumbersValidator\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "validator = null;",
+              "err": {},
+              "uuid": "a88f85ea-c1fa-4eea-bba6-6901e41b0393",
+              "parentUUID": "6a3c32ab-c5c8-4029-9363-8ed37e4dcfac",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "1ea1fc23-35a6-4b9c-a73b-6dfa39f53a2b",
+              "title": "isNumberEven",
+              "fullFile": "C:\\Users\\User\\git\\QA-test\\Unit_test_task\\test\\isNumberEven.spec.js",
+              "file": "\\test\\isNumberEven.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should return true if number is even",
+                  "fullTitle": "NumbersValidator isNumberEven should return true if number is even",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(validator.isNumberEven(4)).to.be.equal(true);",
+                  "err": {},
+                  "uuid": "9f1661b0-71ab-4596-b286-51764fddd26d",
+                  "parentUUID": "1ea1fc23-35a6-4b9c-a73b-6dfa39f53a2b",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should throw an error when provided a string",
+                  "fullTitle": "NumbersValidator isNumberEven should throw an error when provided a string",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(() => {\n  validator.isNumberEven('4');\n}).to.throw('[4] is not of type \"Number\" it is of type \"string\"');",
+                  "err": {},
+                  "uuid": "f857a21b-01f0-4c1e-9498-3155c592f307",
+                  "parentUUID": "1ea1fc23-35a6-4b9c-a73b-6dfa39f53a2b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "9f1661b0-71ab-4596-b286-51764fddd26d",
+                "f857a21b-01f0-4c1e-9498-3155c592f307"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "c28aa3ed-517d-48d0-ad3b-ad2f5518c63c",
+              "title": "getEvenNumbersFromArray",
+              "fullFile": "C:\\Users\\User\\git\\QA-test\\Unit_test_task\\test\\isNumberEven.spec.js",
+              "file": "\\test\\isNumberEven.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should return an array of even numbers",
+                  "fullTitle": "NumbersValidator getEvenNumbersFromArray should return an array of even numbers",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const arrayOfNumbers = [5, 2, 6, 11, 22];\nconst evenNumberArray = validator.getEvenNumbersFromArray(arrayOfNumbers);\nexpect(evenNumberArray).to.be.eql([2, 6, 22]);",
+                  "err": {},
+                  "uuid": "d404ae95-dfb7-473d-bf9b-8504e2d2138f",
+                  "parentUUID": "c28aa3ed-517d-48d0-ad3b-ad2f5518c63c",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should throw an error if array is not full of numbers",
+                  "fullTitle": "NumbersValidator getEvenNumbersFromArray should throw an error if array is not full of numbers",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const arrayOfNumbers = [5, '2', 11, 22];\nexpect(() => {\n  validator.getEvenNumbersFromArray(arrayOfNumbers);\n}).to.throw('[5,2,11,22] is not an array of \"Numbers\"');",
+                  "err": {},
+                  "uuid": "7ce20c1d-bb32-47e0-bab5-d708ab3ba100",
+                  "parentUUID": "c28aa3ed-517d-48d0-ad3b-ad2f5518c63c",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "d404ae95-dfb7-473d-bf9b-8504e2d2138f",
+                "7ce20c1d-bb32-47e0-bab5-d708ab3ba100"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "0aa82859-a201-4c4b-bd09-0802b338c8db",
+              "title": "isAllNumbers",
+              "fullFile": "C:\\Users\\User\\git\\QA-test\\Unit_test_task\\test\\isNumberEven.spec.js",
+              "file": "\\test\\isNumberEven.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should return true if all elements in array are numbers",
+                  "fullTitle": "NumbersValidator isAllNumbers should return true if all elements in array are numbers",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const numbersArray = [1, 2, 3, 4, 5];\nexpect(validator.isAllNumbers(numbersArray)).to.be.equal(true);",
+                  "err": {},
+                  "uuid": "0176aa8a-f21c-48a0-98be-1c5f1030a53a",
+                  "parentUUID": "0aa82859-a201-4c4b-bd09-0802b338c8db",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should return false if not all elements in array are numbers",
+                  "fullTitle": "NumbersValidator isAllNumbers should return false if not all elements in array are numbers",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const mixedArray = [1, '2', '3', 4, 5];\nexpect(validator.isAllNumbers(mixedArray)).to.be.false;",
+                  "err": {},
+                  "uuid": "e655d6e0-2a62-4e8e-8677-61834538c96f",
+                  "parentUUID": "0aa82859-a201-4c4b-bd09-0802b338c8db",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should throw an error if not passed an array",
+                  "fullTitle": "NumbersValidator isAllNumbers should throw an error if not passed an array",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const nonArray = 'not an array';\nexpect(() => validator.isAllNumbers(nonArray)).to.throw(Error, `[${nonArray}] is not an array`);",
+                  "err": {},
+                  "uuid": "63b96fc8-7fbc-42e0-a431-5b8037b4b1d0",
+                  "parentUUID": "0aa82859-a201-4c4b-bd09-0802b338c8db",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "0176aa8a-f21c-48a0-98be-1c5f1030a53a",
+                "e655d6e0-2a62-4e8e-8677-61834538c96f",
+                "63b96fc8-7fbc-42e0-a431-5b8037b4b1d0"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "a1160e84-66a0-4a64-b921-89dc76ea0751",
+              "title": "isInteger",
+              "fullFile": "C:\\Users\\User\\git\\QA-test\\Unit_test_task\\test\\isNumberEven.spec.js",
+              "file": "\\test\\isNumberEven.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should return true if value is an integer",
+                  "fullTitle": "NumbersValidator isInteger should return true if value is an integer",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const intValue = 42;\nexpect(validator.isInteger(intValue)).to.be.equal(true);",
+                  "err": {},
+                  "uuid": "e568c712-b4f8-4163-86d0-c816dd0ce336",
+                  "parentUUID": "a1160e84-66a0-4a64-b921-89dc76ea0751",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should throw an error if value is not a number",
+                  "fullTitle": "NumbersValidator isInteger should throw an error if value is not a number",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const nonIntegerValue = '42';\nexpect(() => validator.isInteger(nonIntegerValue)).to.throw(Error, `[${nonIntegerValue}] is not a number`);",
+                  "err": {},
+                  "uuid": "60e4145e-04c3-42e4-972c-a0080d816023",
+                  "parentUUID": "a1160e84-66a0-4a64-b921-89dc76ea0751",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "e568c712-b4f8-4163-86d0-c816dd0ce336",
+                "60e4145e-04c3-42e4-972c-a0080d816023"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.5.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

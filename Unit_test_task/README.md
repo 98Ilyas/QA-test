@@ -1,6 +1,6 @@
-Task - Do coverage test to NumbersValidator
+**Task - Do coverage test to NumbersValidator**
 
-A JavaScript class for validating numbers and arrays of numbers.
+## A JavaScript class for validating numbers and arrays of numbers.
 
 ## Task Description
 1. Copy the `NumbersValidator` class code into your project directory from Repository;

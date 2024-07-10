@@ -8,7 +8,10 @@ describe('Pastebin Automation', () => {
             // Interact with the main text area
             const textArea = await $('#postform-text');
             await textArea.waitForExist({ timeout: 10000 });
-            await textArea.setValue('git config --global user.name "New Sheriff in Town"\ngit reset $(git commit-tree HEAD^{tree} -m "Legacy code")\ngit push origin master --force');
+            const pasteContent = `git config --global user.name "New Sheriff in Town"
+git reset $(git commit-tree HEAD^{tree} -m "Legacy code")
+git push origin master --force`;
+            await textArea.setValue(pasteContent);
             console.log('Set text area value');
 
             // Set Syntax Highlighting to Bash
@@ -74,11 +77,8 @@ describe('Pastebin Automation', () => {
             console.log('Syntax highlighting for Bash verified successfully');
 
             // Verify the code content
-            const codeContent = await $('div.highlighted-code').getText();
-            const expectedContent = `git config --global user.name "New Sheriff in Town"
-git reset $(git commit-tree HEAD^{tree} -m "Legacy code")
-git push origin master --force`;
-            if (codeContent.trim() !== expectedContent.trim()) {
+            const codeContent = await $('div.de1').getText();
+            if (codeContent.trim() !== pasteContent.trim()) {
                 throw new Error('Code content does not match expected values');
             }
             console.log('Code content verified successfully');

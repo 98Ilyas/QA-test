@@ -58,7 +58,7 @@ describe('Pastebin Automation', () => {
             console.log('Page title verified successfully');
 
             // Verify the code content
-            const codeContent = await $('div.highlighted-code').getText();
+            const codeContent = await $('div.de1').getText();
             const expectedContent = 'Hello from WebDriver';
             if (codeContent.trim() !== expectedContent.trim()) {
                 throw new Error('Code content does not match expected values');

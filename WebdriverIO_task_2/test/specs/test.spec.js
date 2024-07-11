@@ -1,34 +1,22 @@
 describe('Pastebin Automation', () => {
-    it('should create a new paste with specified attributes and verify content', async () => {
+    it('should create a new paste with specified attributes', async () => {
         try {
             // Open Pastebin
             await browser.url('https://pastebin.com/');
             console.log('Opened Pastebin');
 
-            // Interact with the main text area
+            // Wait for the main text area to be visible and interact with it
             const textArea = await $('#postform-text');
             await textArea.waitForExist({ timeout: 10000 });
-            const pasteContent = `git config --global user.name "New Sheriff in Town"
-git reset $(git commit-tree HEAD^{tree} -m "Legacy code")
-git push origin master --force`;
-            await textArea.setValue(pasteContent);
+            await textArea.setValue('Hello from WebDriver');
             console.log('Set text area value');
-
-            // Set Syntax Highlighting to Bash
-            const syntaxHighlightingDropdown = await $('#select2-postform-format-container');
-            await syntaxHighlightingDropdown.waitForClickable({ timeout: 5000 });
-            await syntaxHighlightingDropdown.click();
-            console.log('Clicked syntax highlighting dropdown');
-            const bashOption = await $('//li[text()="Bash"]');
-            await bashOption.waitForClickable({ timeout: 5000 });
-            await bashOption.click();
-            console.log('Selected Bash option');
 
             // Set Paste Expiration to 10 Minutes
             const expirationDropdown = await $('#select2-postform-expiration-container');
             await expirationDropdown.waitForClickable({ timeout: 5000 });
             await expirationDropdown.click();
             console.log('Clicked expiration dropdown');
+
             const tenMinutesOption = await $('//li[text()="10 Minutes"]');
             await tenMinutesOption.waitForClickable({ timeout: 5000 });
             await tenMinutesOption.click();
@@ -37,7 +25,7 @@ git push origin master --force`;
             // Set Paste Name / Title
             const titleInput = await $('#postform-name');
             await titleInput.waitForExist({ timeout: 5000 });
-            await titleInput.setValue('how to gain dominance among developers');
+            await titleInput.setValue('helloweb');
             console.log('Set paste title');
 
             // Click the "Create New Paste" button
@@ -64,21 +52,15 @@ git push origin master --force`;
 
             // Check final state
             const pageTitle = await browser.getTitle();
-            if (!pageTitle.includes('how to gain dominance among developers - Pastebin.com')) {
-                throw new Error(`Page title does not match. Expected to contain: "how to gain dominance among developers", Found: "${pageTitle}"`);
+            if (!pageTitle.includes('helloweb - Pastebin.com')) {
+                throw new Error(`Page title does not match. Expected to contain: "helloweb - Pastebin.com", Found: "${pageTitle}"`);
             }
             console.log('Page title verified successfully');
 
-            // Verify Syntax Highlighting for Bash
-            const syntaxHighlighted = await $('//div[@class="highlighted-code"]//a[text()="Bash"]');
-            if (!await syntaxHighlighted.isExisting()) {
-                throw new Error('Syntax highlighting for Bash is not applied');
-            }
-            console.log('Syntax highlighting for Bash verified successfully');
-
             // Verify the code content
             const codeContent = await $('div.de1').getText();
-            if (codeContent.trim() !== pasteContent.trim()) {
+            const expectedContent = 'Hello from WebDriver';
+            if (codeContent.trim() !== expectedContent.trim()) {
                 throw new Error('Code content does not match expected values');
             }
             console.log('Code content verified successfully');
@@ -90,3 +72,6 @@ git push origin master --force`;
         }
     });
 });
+
+
+

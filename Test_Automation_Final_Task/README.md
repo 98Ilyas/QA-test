@@ -41,3 +41,5 @@
 2. Entered a valid username from the Accepted usernames section.
 3. Clicked Login and validated the title "Swag Labs" in the dashboard.
 4. Has provided execution with different parameters.
+
+*All test cases were automated using WebDriverIO, with support for both Firefox and Chrome browsers. Locators were provided using XPath and the Page Object pattern was used. Loggers from the selected framework were also utilized.* 
